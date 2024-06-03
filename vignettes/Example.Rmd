@@ -1,0 +1,66 @@
+---
+title: "Example"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Example}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(planning.for.gold)
+```
+
+
+We use the [bangladesh_floods] data described in Bekerman et al. (2024) to show
+how to use the [sv()] function. We run the method for $\Gamma \in \{1,1.5,2.5\}$
+and examine the results below.
+
+
+We start with $\Gamma=1:$
+```{r}
+data <- bangladesh_floods
+
+result_gamma1 <- sv(data_outcomes=data$data_outcomes,
+  control_idx=data$control_idx,
+  treated_idx=data$treated_idx,
+  alpha=0.1, gamma = 1)
+
+length(result_gamma1$outcomes_tested)
+result_gamma1$outcomes_rejected
+```
+
+
+Next, we show $\Gamma=1.5:$
+```{r}
+data <- bangladesh_floods
+
+result_gamma1.5 <- sv(data_outcomes=data$data_outcomes,
+  control_idx=data$control_idx,
+  treated_idx=data$treated_idx,
+  alpha=0.1, gamma = 1.5)
+
+length(result_gamma1.5$outcomes_tested)
+result_gamma1.5$outcomes_rejected
+```
+
+
+Lastly, we have $\Gamma=2.5:$
+```{r}
+data <- bangladesh_floods
+
+result_gamma2.5 <- sv(data_outcomes=data$data_outcomes,
+  control_idx=data$control_idx,
+  treated_idx=data$treated_idx,
+  alpha=0.1, gamma = 2.5)
+
+length(result_gamma2.5$outcomes_tested)
+result_gamma2.5$outcomes_rejected
+```

@@ -1,0 +1,25 @@
+Package: planning.for.gold
+Title: Powerful Hypothesis Testing in Observational Studies
+Version: 0.0.0.9000
+Authors@R: 
+    person("William", "Bekerman",
+    email = "bekerman@wharton.upenn.edu",
+    role = c("aut", "cre"),
+    comment = c(ORCID = "0000-0002-6957-6863"))
+Description: Identifies and tests hypotheses from a
+    split sample in an observational study that are
+    robust to potential unmeasured biases.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.1
+Imports:
+	stats,
+        DOS2
+Depends: 
+    R (>= 2.10)
+LazyData: true
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
